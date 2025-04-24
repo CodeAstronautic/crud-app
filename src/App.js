@@ -1,18 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import UserForm from './component/UserForm';
 import UserList from './component/UserList';
 
 function App() {
 
-  const [selectedUser , setSelectedUser] =useState({})
-  console.log(selectedUser,"selectedUserselectedUser")
+  const [selectedUser, setSelectedUser] = useState({})
   return (
-    <div style={{padding:20}}>
+    <div style={{ padding: 20 }}>
+      <UserList selectedUser={selectedUser} onEdit={setSelectedUser} />
 
-      <UserForm selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
-      <UserList selectedUser={selectedUser}onEdit={setSelectedUser} />
-    
     </div>
   );
 }
